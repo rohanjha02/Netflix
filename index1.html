@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    
+    <nav class="zone red sticky" id="navbar">
+        <ul class="nav-bar">
+            <a href="#"><img class="imglogo" src="logo.jpg.png"></a>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Genre</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li class="push"><a href="#">Search</a></li>
+            <button><input type="text" placeholder="Search games, tv shows, movies.. " style="border: 0px; width: 90%; margin-left: 10px;"> </button>
+        </ul>
+    </nav>
+    <div class="cover" onmouseover="playVideo()" onmouseout="pauseVideo()">
+        <video id="coverVideo" loop>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        var video = document.getElementById("coverVideo");
+        var navbar = document.getElementById("navbar");
+
+        function playVideo() {
+            video.play();
+        }
+
+        function pauseVideo() {
+            video.pause();
+        }
+
+        window.addEventListener('scroll', function() {
+            var scrollPos = window.scrollY;
+            var opacity = scrollPos / video.clientHeight;
+
+            navbar.style.backgroundColor = 'rgba(0, 0, 0, ' + opacity + ')';
+        });
+    </script>
+    </div>
+    <div class="grid-wrapper">
+        <div class="zone netflix pro image1" data-video-src="your-video-source.mp4">
+            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQA_-tL18_rj9zEcjN6n41NEaJm-kRNF9UeOtvksZ4z_OW6jRA9" alt="Image" class="image1">
+            Avengers Endgame
+        </div>
+        <div class="zone netflix pro image2" data-video-src="your-video-source.mp4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmE2vwxy5KaCu7cRuYYdgNdQKddux5OYgGwsPo0kqP_xzLnsDV" alt="Image">
+            Avengers Infinity War
+        </div>
+        <div class="zone netflix pro image3" data-video-src="your-video-source.mp4">
+            <img src="https://www.movienewsletters.net/photos/183976R1.jpg" alt="Image">
+            Avengers Age of Ultron
+        </div>
+        <div class="zone netflix pro image4" data-video-src="your-video-source.mp4">
+            <img src="https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSK0mRgxk6RD6AXbkAzpQRs7FCh9J0FiOxC9eIHCqoxAgpBeywiPrFjbAcGKbCaVYkc" alt="Image">
+            Avengers
+        </div>
+        <div class="zone netflix pro image5" data-video-src="your-video-source.mp4">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQcEazg1RHMebusfpj_3nR8f-d_CgNLxAc0Wm9foVDza9M4hKcf" alt="Image">
+            Money Heist
+        </div>
+        <div class="zone netflix pro image6" data-video-src="your-video-source.mp4">
+            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzMDAxOTUyMV5BMl5BanBnXkFtZTgwNzAxMzYzOTE@._V1_.jpg" alt="Image">
+            Strangers Things
+        </div>
+        <div class="zone netflix pro image7" data-video-src="your-video-source.mp4">
+            <img src="https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw" alt="Image">
+            Dark
+        </div>
+        <div class="zone netflix pro image8" data-video-src="your-video-source.mp4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Image">
+            Breaking Bad
+        </div>
+        
+        
+    </div>
+    <p></p>
+    <footer class="zone black">
+        <p>Made with ❤️ by Rohan</p>
+    </footer>
+
+</body>
+</html>

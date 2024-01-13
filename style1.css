@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+.zone {
+    color: white;
+}
+
+.nav-bar {
+    display: flex;
+    font-size: 1.5em;
+    padding-inline-start: 30px;
+    padding-inline-end: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.5s ease-in-out;
+}
+
+.imglogo{
+    width: 100%;
+    height: 50px;
+    margin-right: 15px;
+    padding-top: 0.2em;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .nav-bar{
+        font-size: 0.7em;
+    }
+    button{
+        align-self: center;
+    }
+    .imglogo{
+        width: 100px;
+    }
+
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+li {
+    list-style: none;
+    padding: 20px;
+}
+
+.push{
+    margin-left: auto;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    opacity: 0.5;
+    border-radius: 5px;
+    width: 250px;
+    height: 40px;
+    align-self: center;
+}
+
+input{
+    outline: none; 
+    border: none;  
+    box-shadow: none;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+@keyframes changeBackground {
+    0%, 100% { background-image: url('https://m.media-amazon.com/images/M/MV5BOWY4MmFiY2QtMzE1YS00NTg1LWIwOTQtYTI4ZGUzNWIxNTVmXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg'); }
+    20% { background-image: url('https://www.gamespot.com/a/uploads/original/1562/15626911/3611989-elcck2hxyaaa5mb.jpg'); }
+    40% { background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/09548540664543.5bf4f783a7fbb.jpg'); }
+    60% { background-image: url('https://i.pinimg.com/originals/88/43/1a/88431a9ed1430dd5359e13002b24c824.jpg'); }
+    80% { background-image: url('https://www.tallengestore.com/cdn/shop/products/MoneyHeist-NetflixTVShowPosterFanArt_e91469e6-1d4b-4e79-82ce-7c3caa3072af.jpg?v=1589268509'); }
+}
+
+.cover-container {
+    position: relative;
+    z-index: 0; /* Ensure the container is behind the navbar */
+}
+
+.cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    animation: changeBackground 20s infinite;
+    background-size:cover;
+}
+
+.cover video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.cover:hover video {
+    opacity: 1;
+}
+
+.cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.cover:hover::before {
+    background: rgba(0, 0, 0, 0);
+}
+
+.grid-wrapper {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.netflix {
+    background-color: black;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 10px;
+    font-size: 2rem;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.netflix:hover {
+    background-color: black;
+    transform: scale(1.02);
+}
+
+.pro {
+    position: relative;
+    overflow: hidden;
+}
+
+.pro img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px 10px 0 0;
+
+}
+
+.pro::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+}
+
+.pro.image1:hover::after {
+    background-image: url('https://media3.giphy.com/media/PkWs3XLc9ExgZOVEGl/200w.gif?cid=82a1493bgul251e2jrlmn5be6ag9clsbaw3d7g84crzi1hr2&ep=v1_gifs_related&rid=200w.gif&ct=g');
+    background-size: 100% 100%;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+    transition: background 0.3s ease-in-out;
+}
+
+.pro.image2:hover::after {
+    background-image: url('https://asthebunnyhops.com/wp-content/uploads/2018/03/Iron-Man-Fly.gif');
+    background-size: 100% 100%;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+    transition: background 0.3s ease-in-out;
+}
+
+.pro.image3:hover::after {
+    background-image: url('https://33.media.tumblr.com/f6cb81deaa1fa386ffe8b05669232525/tumblr_ndvr28XOPi1rrkahjo2_250.gif');
+    background-size: 100% 100%;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+    transition: background 0.3s ease-in-out;
+}
+
+.pro.image4:hover::after {
+    background-image: url('https://www.gifcen.com/wp-content/uploads/2023/08/avengers-gif-6.gif');
+    background-size: 100% 100%;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+    transition: background 0.3s ease-in-out;
+}
+
+.pro.image5:hover::after {
+    background-image: url('https://media1.giphy.com/media/vbPzAifIrGycdxnvsO/giphy.gif?cid=6c09b95266nc566bsay1zd3zadnre1wjblm8zchd3aebs643&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g');
+    background-size: 100% 100%;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+    transition: background 0.3s ease-in-out;
+}
+
+.pro.image6:hover::after {
+    background-image: url('https://media0.giphy.com/media/QKVY9InPCvfSM34sS8/giphy.gif');
+    background-size: 100% 100%;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+    transition: background 0.3s ease-in-out;
+}
+.pro.image7:hover::after {
+    background-image: url('https://media1.giphy.com/media/87dGn81U6RvMSRYoRe/giphy.gif');
+    background-size: 100% 100%;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+    transition: background 0.3s ease-in-out;
+}
+.pro.image8:hover::after {
+    background-image: url('https://media2.giphy.com/media/3ohc10GA6j4XrLWzZK/giphy.gif');
+    background-size: 100% 100%;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+    transition: background 0.3s ease-in-out;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+}
+
+.red {
+    background: transparent;
+
+}
